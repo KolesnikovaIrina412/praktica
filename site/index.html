@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Киберполигон</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="logotip.png" alt="Логотип" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="showSection('home')">Главная</a></li>
+                <li><a href="#about" onclick="showSection('about')">О проекте</a></li>
+                <li><a href="#team" onclick="showSection('team')">Участники</a></li>
+                <li><a href="#journal" onclick="showSection('journal')">Журнал</a></li>
+                <li><a href="#resources" onclick="showSection('resources')">Ресурсы</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <!-- Все разделы -->
+    <main>
+        <!-- Главная -->
+        <section id="home" class="content-section active">
+            <div class="hero">
+                <h1>Киберполигон</h1>
+                <p>Инновационная образовательно-исследовательская платформа для подготовки специалистов в области кибербезопасности.</p>
+            </div>
+            <div class="annotation">
+                <h2>Аннотация проекта</h2>
+                <p>Цель проекта «Киберполигон» заключается в создании инновационной образовательно-исследовательской платформы для подготовки высококвалифицированных специалистов в области кибербезопасности. Проект направлен на разработку веб-интерфейса на React, бэкенда на Django, а также интеграцию систем виртуализации (VirtualBox, KVM) и контейнеризации (Docker) для моделирования реальных кибератак и отработки навыков защиты информационных систем.</p>
+                <p>Участников: <strong>75</strong></p>
+                <p>Куратор: <em>Гневшев А.Ю.</em></p>
+            </div>
+        </section>
+
+        <!-- О проекте -->
+        <section id="about" class="content-section">
+            <h2>О проекте</h2>
+            <article>
+                <h3>1. Введение</h3>
+                <p>«Киберполигон» представляет собой цифровую среду, объединяющую образовательные, исследовательские и практические инструменты для студентов и специалистов в сфере информационной безопасности. Проект сочетает современные IT-технологии, включая облачную инфраструктуру, симуляцию сетевых угроз и интерактивные обучающие модули, чтобы обеспечить комплексный подход к обучению кибербезопасности. Платформа способствует преодолению разрыва между теоретической подготовкой и реальными требованиями индустрии.<p>
+                <h3>2. Проблемы</h3>
+                <p>Современное образование в области кибербезопасности сталкивается с рядом вызовов:<p>
+                <ul>
+                    <li>Дефицит практики: Студенты редко работают с реальными кейсами кибератак из-за отсутствия безопасных тренировочных сред.</li>
+                    <li>Устаревшие методы обучения: Программы не успевают за динамикой развития киберугроз, что снижает конкурентоспособность выпускников.</li>
+                    <li>Нехватка инфраструктуры: Университеты не имеют доступа к специализированным полигонам для тестирования систем защиты. </li>
+                    <li>Разрыв с индустрией: Ограниченное взаимодействие с IT-компаниями затрудняет внедрение актуальных навыков в учебный процесс.</li>
+                    <li>Дефицит квалифицированных кадров: Работодатели испытывают нехватку специалистов, способных оперативно реагировать на современные киберугрозы.</li>
+                </ul>
+            </article>
+            <article>
+                <h3>3. Решение</h3>
+                <div class="solution-grid">
+                    <div class="card">
+                        <h4>Веб-платформа</h4>
+                        <li>Фронтенд на React с интуитивным интерфейсом для доступа к учебным материалам и симуляциям.</li>
+<li>Бэкенд на Django для управления пользователями, заданиями и виртуальными средами.
+</li>
+                    </div>
+                    <div class="card">
+                        <h4>Симуляционная инфраструктура</h4>
+                        <li>Виртуальный макет города для моделирования атак на критически важные объекты.</li>
+                        <li>Интеграция с KVM, VirtualBox и Docker для развертывания изолированных лабораторных сред.
+</li>
+                    </div>
+                    <div class="card">
+                        <h4>Образовательные модули</h4>
+                        <li>Учебно-тренировочные задания (квесты, CTF-соревнования).</li>
+                    </div>
+                    <div class="card">
+                        <h4>Партнёрская сеть</h4>
+                        <li>Привлечение компаний для совместных проектов и финансирования</li>
+                        <li>Развитие международного сотрудничества с вузами и исследовательскими центрами.</li>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Участники -->
+        <section id="team" class="content-section">
+            <h2>Участники</h2>
+        <div class="members">
+            <!-- Участник 1 -->
+            <a href="#!" class="member-link" onclick="showDetails('member1')">Дерягин Д.А.</a>
+            <div id="member1" class="member-details">
+                <p>К</p>
+            </div>
+
+            <!-- Участник 2 -->
+            <a href="#!" class="member-link" onclick="showDetails('member2')">Кодзаев Н.П.</a>
+            <div id="member2" class="member-details">
+                <p></p>
+            </div>
+
+            <!-- Участник 3 -->
+            <a href="#!" class="member-link" onclick="showDetails('member2')">Колесникова И.В.</a>
+            <div id="member2" class="member-details">
+                <p></p>
+            </div>
+        </div>
+        </section>
+
+        <!-- Журнал -->
+        <section id="journal" class="content-section">
+            <h2>Журнал</h2>
+            <article class="post">
+                <h3>Разработка веб-ресурса</h3>
+                <p>✅ Завершено: создан сайт</p>
+                <time>15.10.2023</time>
+            </article>
+            <article class="post">
+                <h3>1. Работа с системой контроля версий Git</h3>
+                <p>✅ Завершено</p>
+                <time>23.04.2025</time>
+                <li>Организован командный репозиторий на GitHub на базе шаблона.</li>
+                <li>Освоены ключевые операции Git:</li>
+                <ul>
+                     <li>git clone — копирование репозитория на локальное устройство.</li>
+                     <li>git commit -m "описание" — фиксация изменений с комментарием.</li>
+                     <li>git push — синхронизация с удалённым хранилищем.</li>
+                     <li>git branch и git checkout — управление ветками разработки.</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Ресурсы -->
+        <section id="resources" class="content-section">
+            <h2>Ресурсы</h2>
+            <ul>
+                <li><a href="https://innopolis.university" target="_blank">Университет Иннополис</a></li>
+                <li><a href="https://www.kali.org/" target="_blank">Kali Linux</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 Киберполигон</p>
+    </footer>
+
+    <script>
+        // Показываем раздел по умолчанию
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('home');
+        });
+
+        // Функция переключения разделов
+        function showSection(sectionId) {
+            // Скрываем все разделы
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Показываем выбранный раздел
+            const activeSection = document.getElementById(sectionId);
+            if (activeSection) {
+                activeSection.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
