@@ -1,59 +1,64 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Мобильное меню
-  const nav = document.querySelector('.nav');
-  const toggle = document.querySelector('.nav-toggle');
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
-  });
+    // Мобильное меню
+    const nav = document.querySelector('.nav');
+    const navToggle = document.querySelector('.nav-toggle');
+    
+    const toggleMenu = () => {
+        nav.classList.toggle('active');
+        navToggle.setAttribute('aria-expanded', nav.classList.contains('active'));
+    };
+    
+    navToggle.addEventListener('click', toggleMenu);
 
-  // Плавная прокрутка
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // закрыть меню на мобилках
-      if (nav.classList.contains('open')) nav.classList.remove('open');
-    });
-  });
-
-  // Анимация секций при скролле
-  const sections = document.querySelectorAll('.section');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.2 });
-
-  sections.forEach(sec => io.observe(sec));
-
-  // Раскрытие деталей участников
-  document.querySelectorAll('.member-toggle').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const parent = btn.closest('.member');
-      parent.classList.toggle('open');
-    });
-  });
-
-  // Показ секций
-  function showSection(sectionId) {
-    document.querySelectorAll('.content-section').forEach(section => {
-      section.classList.remove('active');
+    // Закрытие меню при клике вне области
+    document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target) && !navToggle.contains(e.target)) {
+            nav.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
     });
 
-    const target = document.getElementById(sectionId);
-    if (target) target.classList.add('active');
-  }
-
-  // Показ подробностей о ресурсе
-  function showDetails(id) {
-    document.querySelectorAll('.member-details').forEach(detail => {
-      detail.style.display = 'none';
+    // Плавная прокрутка
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
 
-    const element = document.getElementById(id);
-    if (element) element.style.display = 'block';
-  }
+    // Раскрытие участников
+    document.querySelectorAll('.member-toggle').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const member = button.closest('.member');
+            const isExpanded = member.classList.toggle('active');
+            
+            button.setAttribute('aria-expanded', isExpanded);
+        });
+    });
+
+    // Анимация секций
+    const sections = document.querySelectorAll('.section');
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
 });
