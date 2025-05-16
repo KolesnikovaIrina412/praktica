@@ -24,7 +24,7 @@
 
 **Это отражено в следующих коммитах:**
 - [Добавление медиа](https://github.com/KolesnikovaIrina412/praktica/commit/3444e6b1500bc0f568af92d921a36cad673993f2);
-- [Добавление статей и разделов на сайт]https://github.com/KolesnikovaIrina412/praktica/commit/a26d2fdc023d9404ba1d643017834fb096e32fac);
+- [Добавление статей и разделов на сайт](https://github.com/KolesnikovaIrina412/praktica/commit/a26d2fdc023d9404ba1d643017834fb096e32fac);
 
 ## Создание итоговой версии сайта
 Для создания итоговой версии сайта, мы использовали генераторы html/css/js кода с AI (deepseek,chatgpt) после генерации шаблона,
