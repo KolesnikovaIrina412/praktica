@@ -36,7 +36,7 @@
 - [Обновление css файла](https://github.com/KolesnikovaIrina412/praktica/commit/7e70d4d80131e61226a4eeabd9f822ba96ba4bdc);
 - [Добвление js файла](https://github.com/KolesnikovaIrina412/praktica/commit/038c0fb3e2267e8be0f94500d8d3bbc697a9ee11);
 
-## Публикация сайта на (?)
+## Публикация сайта на GithubPages
 В течение 7 мая была собрана итоговая версия сайта и загружена в папку site, в итоге сайт 
 выложен в сеть.
 
